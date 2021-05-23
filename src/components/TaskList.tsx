@@ -24,6 +24,7 @@ export function TaskList() {
     }
     
     setTasks([...tasks, newTask])
+    setNewTaskTitle('')
 
   }
 
@@ -31,7 +32,7 @@ export function TaskList() {
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
     const newTasks = tasks.map(element => {
       if(element.id === id) {
-        element.isComplete = true
+        element.isComplete = !element.isComplete
       }
       return element
     })
